@@ -84,3 +84,4 @@ post-checkout
 post-commit
 post-merge
 pre-push
+deploy/compose/huggingface/
