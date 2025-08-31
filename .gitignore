@@ -78,4 +78,9 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Workbench Project Layout
+# Workbench Project Layoutdeploy/compose/huggingface/
+deploy/compose/ngc/
+post-checkout
+post-commit
+post-merge
+pre-push
