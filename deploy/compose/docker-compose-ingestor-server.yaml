@@ -79,7 +79,8 @@ services:
       ENABLE_CITATIONS: ${ENABLE_CITATIONS:-True}
 
       # Choose the summary model to use for document summary
-      SUMMARY_LLM: ${SUMMARY_LLM:-nvidia/llama-3.3-nemotron-super-49b-v1}
+      #SUMMARY_LLM: ${SUMMARY_LLM:-nvidia/llama-3.3-nemotron-super-49b-v1}
+      SUMMARY_LLM: ${SUMMARY_LLM:-nvidia/llama-3.1-nemotron-nano-4b-v1.1}
       SUMMARY_LLM_SERVERURL: ${SUMMARY_LLM_SERVERURL-"nim-llm:8000"}
       SUMMARY_LLM_MAX_CHUNK_LENGTH: ${SUMMARY_LLM_MAX_CHUNK_LENGTH:-50000}
       SUMMARY_CHUNK_OVERLAP: ${SUMMARY_CHUNK_OVERLAP:-200}
@@ -98,6 +99,13 @@ services:
       # NV-Ingest Batch Mode Configurations
       NV_INGEST_FILES_PER_BATCH: ${NV_INGEST_FILES_PER_BATCH:-16}
       NV_INGEST_CONCURRENT_BATCHES: ${NV_INGEST_CONCURRENT_BATCHES:-4}
+
+      # Limit parallel document / page pipelines
+      #RAG_MAX_CONCURRENT_TASKS: "1"
+      #RAG_MAX_PAGES_PER_BATCH: "1"
+      # If there’s a specific knob, some blueprints use:
+      #INGESTOR_MAX_PARALLEL_DOCS: "1"
+      #INGESTOR_MAX_PARALLEL_PAGES: "1"
 
     ports:
       - "8082:8082"
